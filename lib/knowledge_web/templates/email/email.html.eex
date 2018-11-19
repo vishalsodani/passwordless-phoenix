@@ -1,0 +1,5 @@
+Here is your login link:
+
+<%= Routes.signin_url(KnowledgeWeb.Endpoint, :show, @token) %>
+
+It is valid for 30 minutes.

@@ -21,6 +21,8 @@ config :knowledge, KnowledgeWeb.Endpoint,
     ]
   ]
 
+config :knowledge, Knowledge.Mailer,
+  adapter: Bamboo.LocalAdapter
 # ## SSL Support
 #
 # In order to use HTTPS in development, a self-signed

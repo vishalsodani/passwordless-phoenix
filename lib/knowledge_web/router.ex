@@ -17,6 +17,7 @@ defmodule KnowledgeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/signin/:token", SessionsController, :show, as: :signin
     resources "/sessions", SessionsController, only: [:new, :create, :delete]
   end
 
