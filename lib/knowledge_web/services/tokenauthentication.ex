@@ -77,8 +77,6 @@ defmodule KnowledgeWeb.TokenAuthentication do
   
     # Creates a new token for the given user and returns the token value.
     defp create_token(user) do
-      #token_val = Token.sign(Endpoint, "user", user.id)
-      #params = %{token_value: token_val, user_id: user.id}
       changeset = AuthToken.changeset(%AuthToken{}, user)
       auth_token = Repo.insert!(changeset)
       auth_token.token_value
