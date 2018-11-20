@@ -1,40 +1,16 @@
 <section class="phx-hero">
-  <%= if assigns[:user_id] do %>
+  <%= if @user_signed_in? do %>
   <h1>
-  <%= link "Log Out", to: Routes.sessions_path(@conn, :delete, @user_id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></h1>
+  <%= link "Log Out", to: Routes.sessions_path(@conn, :delete, 0), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></h1>
   <% else %>
   <%= link "Log in", to: Routes.sessions_path(@conn, :new), method: :get, class: "btn btn-info" %></h1>
   <% end %>
-  <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
+  
 </section>
 
 <section class="row">
   <article class="column">
     <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.4/CHANGELOG.md">v1.4 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-    </ul>
+    
   </article>
 </section>

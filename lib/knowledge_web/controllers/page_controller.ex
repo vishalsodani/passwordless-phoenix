@@ -3,8 +3,6 @@ defmodule KnowledgeWeb.PageController do
   use KnowledgeWeb, :controller
 
   def index(conn, _params) do
-    user_id = get_session(conn, :user_id)
-    Logger.info user_id
-    render(conn, "index.html", user_id: user_id)
+    render(conn, "index.html")
   end
 end
