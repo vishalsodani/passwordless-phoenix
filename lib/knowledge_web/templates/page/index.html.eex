@@ -1,5 +1,10 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <%= if assigns[:user_id] do %>
+  <h1>
+  <%= link "Log Out", to: Routes.sessions_path(@conn, :delete, @user_id), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></h1>
+  <% else %>
+  <%= link "Log in", to: Routes.sessions_path(@conn, :new), method: :get, class: "btn btn-info" %></h1>
+  <% end %>
   <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
 </section>
 
