@@ -16,6 +16,12 @@ defmodule KnowledgeWeb.SessionsController do
     end
 
     def delete(conn, _params) do
+        conn
+            |> assign(:current_user, nil)
+            |> configure_session(drop: true)
+            |> delete_session(:user_id)
+            |> put_flash(:info, "You logged out successfully. Enjoy your day!")
+            |> redirect(to: Routes.sessions_path(conn, :new))
         
     end
 
