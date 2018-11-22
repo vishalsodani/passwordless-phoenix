@@ -20,7 +20,7 @@ defmodule KnowledgeWeb.Router do
     get "/", PageController, :index
     get "/about", PageController, :about
     get "/signin/:token", SessionsController, :show, as: :signin
-    resources "/sessions", SessionsController, only: [:new, :create, :delete]
+    resources "/sessions", SessionsController, only: [:new, :create, :delete], singleton: true
   end
 
   # Other scopes may use custom stacks.

@@ -1,7 +1,7 @@
 <section class="phx-hero">
   <%= if @user_signed_in? do %>
   <h1>
-  <%= link "Log Out", to: Routes.sessions_path(@conn, :delete, 0), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></h1>
+  <%= link "Log Out", to: Routes.sessions_path(@conn, :delete), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></h1>
   <% else %>
   <%= link "Log in", to: Routes.sessions_path(@conn, :new), method: :get, class: "btn btn-info" %></h1>
   <% end %>
